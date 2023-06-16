@@ -17,6 +17,8 @@ resource "google_compute_instance" "mongo-vm" {
     container-vm = module.gce-container.vm_container_label
   }
 
+  tags = ["container-vm-mongo"]
+
   network_interface {
     network = "default"
     access_config {

@@ -1,35 +1,51 @@
 variable "project_id" {
-  default = "YOUR_PROJECT_ID"
+  type        = string
+  description = "Project ID"
 }
 
 variable "region" {
-  default = "us-central1"
+  type        = string
+  description = "Region"
+  default     = "us-central1"
 }
 
 variable "zone" {
-  default = "us-central1-a"
+  type        = string
+  description = "Zone"
+  default     = "us-central1-a"
 }
 
 variable "mongo_username" {
-  default = "admin"
+  type        = string
+  description = "MongoDB Root Username"
 }
 variable "mongo_password" {
-  default = "admin"
+  type        = string
+  description = "MongoDB Root Password"
 }
 variable "with_volumes" {
-  default = true
+  default     = true
+  type        = bool
+  description = "The container should have volumes"
 }
 
 variable "ip_name" {
-  default = "mongo-ip"
-}
-variable "address_type" {
-  default = "EXTERNAL"
+  type        = string
+  description = "VPC External IP Name"
 }
 
 variable "vm_name" {
-  default = "mongodb"
+  type        = string
+  description = "VM Name"
 }
 variable "machine_type" {
-  default = "e2-medium"
+  type        = string
+  description = "VM Name"
+  default     = "e2-micro"
+}
+
+variable "network" {
+  type        = string
+  description = "Network"
+  default     = "default"
 }

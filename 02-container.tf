@@ -14,26 +14,7 @@ module "gce-container" {
         value = var.mongo_password,
       }
     ]
-
-    volumes = var.with_volumes == true ? [
-      {
-        name      = "data"
-        mountPath = "/data/db"
-        readOnly  = false
-      }
-    ] : []
   }
-
-  volumes = var.with_volumes == true ? [
-    {
-      name = "data"
-
-      gcePersistentDisk = {
-        pdName = "data_disk_0"
-        fsType = "ext4"
-      }
-    }
-  ] : []
 
   restart_policy = "Always"
 }
