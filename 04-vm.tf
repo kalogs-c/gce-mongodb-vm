@@ -20,7 +20,7 @@ resource "google_compute_instance" "mongo-vm" {
   tags = ["container-vm-mongo"]
 
   network_interface {
-    network = "default"
+    network = var.network
     access_config {
       nat_ip = data.google_compute_address.mongo.address
     }
