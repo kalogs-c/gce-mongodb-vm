@@ -14,7 +14,22 @@ module "gce-container" {
         value = var.mongo_password,
       }
     ]
+    volumeMounts = [
+      {
+        mountPath = "/data/db"
+        name      = "data"
+        readOnly  = false
+      }
+    ]
   }
 
+  volumes = [
+    {
+      name = "data"
+      emptyDir = {
+        medium = "Memory"
+      }
+    }
+  ]
   restart_policy = "Always"
 }
