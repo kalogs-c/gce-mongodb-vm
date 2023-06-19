@@ -45,7 +45,8 @@ To use this Terraform script, follow these steps:
 5. Customize the variables:
 
    Open the `variables.tf` file in a text editor and modify the values according
-   to your requirements. You can change the following variables:
+   to your requirements or rename `terraform.tfvars.example` to just
+   `terraform.tfvars`. You can change the following variables:
 
    - `project_id`: Your GCP project ID.
    - `region`: The GCP region where the VM should be created (default:
@@ -54,13 +55,9 @@ To use this Terraform script, follow these steps:
      `us-central1-a`).
    - `mongo_username`: The desired username for MongoDB.
    - `mongo_password`: The desired password for MongoDB.
-   - `with_volumes`: Boolean indicating whether or not to create a persistent
-     volume
    - `ip_name`: Name of the static IP address to be assigned to the VM, if you
      already have one create on VPC you can use it.
-   - `address_type`: The type of IP address to be assigned to the VM (default:
-     `EXTERNAL`).
-   - `vm_name`: Name of the VM (default: `mongodb`). `us-central1-a`).
+   - `vm_name`: Name of the VM
    - `machine_type`: The desired machine type for the VM (default: `e2-medium`).
 
 6. Review the other settings in the Terraform files and make any necessary

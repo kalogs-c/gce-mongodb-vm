@@ -1,0 +1,5 @@
+project_id     = "PROJECT_ID"
+mongo_username = "mongo"
+mongo_password = "mongo"
+ip_name        = "mongo"
+vm_name        = "mongo"
